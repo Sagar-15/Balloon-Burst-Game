@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Balloon Burst Game</title>
+    <style>
+        #game-container {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            margin: 0 auto;
+            border: 1px solid #000;
+        }
+
+        .balloon {
+            position:absolute;
+            padding: 8px;
+            border-radius: 50% 50% 50% 50%; 
+            cursor: pointer;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .balloon::after {
+            content:"";
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0.1px;
+            height: 20px;
+            background-color: #6e5252;
+        }
+
+        #air-pump {
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .burst {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: url(burst.png);
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <div id="game-container">
+        <img src="sky.png" alt="sky" width="800px" height="600px">
+        <img id="air-pump" src="air_pump.png" alt="Air Pump" width="100" height="100">
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
